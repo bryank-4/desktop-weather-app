@@ -1,14 +1,49 @@
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+
 public class ApiCall {
-    private URL url;
-    public void call(){
+
+    Map locationData = new HashMap();
+
+    private void geocode(String location) {
+        try {
+            URL url = new URL(String.format("http://api.openweathermap.org/geo/1.0/direct?q=%s&limit=1&appid=62d50fd38f48aba39355b8ae5a3ae053", location));
+            System.out.println(url);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.connect();
+            int resCode = conn.getResponseCode();
+            if (resCode != 200) {
+                throw new RuntimeException("HttpResponseCode: " + resCode);
+            } else {
+                JSONParser parse = new JSONParser();
+                JSONArray dataArray = (JSONArray) parse.parse(new InputStreamReader(conn.getInputStream()));
+                JSONObject data = (JSONObject) dataArray.get(0);
+                //System.out.println(data);
+                locationData.put("country", data.get("country"));
+                locationData.put("name", data.get("name"));
+                locationData.put("lon", data.get("lon"));
+                locationData.put("lat", data.get("lat"));
+
+            }
+        } catch (Exception error) {
+            System.out.println(error);
+        }
+    }
+
+    public void call() {
+        geocode("Nairobi");
         try {
             // a URL object is created based on the API endpoint
-            url = new URL("https://api.open-meteo.com/v1/forecast?latitude=-1.28&longitude=36.82&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,precipitation,rain,snow_depth,visibility,windspeed_10m");
+            URL url = new URL(String.format("https://api.open-meteo.com/v1/forecast?latitude=%s&longitude=%s&hourly=temperature_2m,relativehumidity_2m,weathercode,surface_pressure,cloudcover,visibility"
+                    , locationData.get("lat"), locationData.get("lon")));
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
 
@@ -17,7 +52,7 @@ public class ApiCall {
             int resCode = conn.getResponseCode();
 
             // if the connection fails an error is thrown, else the data provided is parsed into a JSON object
-            if(resCode != 200) {
+            if (resCode != 200) {
                 throw new RuntimeException("HttpResponseCode: " + resCode);
             } else {
 
@@ -28,7 +63,7 @@ public class ApiCall {
             }
 
 
-        }catch (Exception error) {
+        } catch (Exception error) {
             System.out.println(error);
         }
 
