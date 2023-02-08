@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eba15fdd-819c-43b0-b499-aea566688b89" name="Changes" comment="the call() method has been refactored to convert the data directly into a JSON object rather than building the JSON object via Scanner">
+    <list default="true" id="eba15fdd-819c-43b0-b499-aea566688b89" name="Changes" comment="added geocode method to retrieve longitude and latitude values for a given location">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ApiCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApiCall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675771752642</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added geocode method to retrieve longitude and latitude values for a given location">
+      <created>1675779580399</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675779580399</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,6 +114,7 @@
     <MESSAGE value="project initialization" />
     <MESSAGE value="added code to fetch data from a sample url" />
     <MESSAGE value="the call() method has been refactored to convert the data directly into a JSON object rather than building the JSON object via Scanner" />
-    <option name="LAST_COMMIT_MESSAGE" value="the call() method has been refactored to convert the data directly into a JSON object rather than building the JSON object via Scanner" />
+    <MESSAGE value="added geocode method to retrieve longitude and latitude values for a given location" />
+    <option name="LAST_COMMIT_MESSAGE" value="added geocode method to retrieve longitude and latitude values for a given location" />
   </component>
 </project>

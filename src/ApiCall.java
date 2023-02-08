@@ -3,19 +3,22 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class ApiCall {
+    private Map locationData = new HashMap();
+    private String location;
 
-    Map locationData = new HashMap();
+    public ApiCall(String location) {
+        this.location = location;
+        call(this.location);
+    }
 
     private void geocode(String location) {
         try {
             URL url = new URL(String.format("http://api.openweathermap.org/geo/1.0/direct?q=%s&limit=1&appid=62d50fd38f48aba39355b8ae5a3ae053", location));
-            System.out.println(url);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.connect();
@@ -26,11 +29,11 @@ public class ApiCall {
                 JSONParser parse = new JSONParser();
                 JSONArray dataArray = (JSONArray) parse.parse(new InputStreamReader(conn.getInputStream()));
                 JSONObject data = (JSONObject) dataArray.get(0);
-                //System.out.println(data);
-                locationData.put("country", data.get("country"));
-                locationData.put("name", data.get("name"));
+
+                locationData.put("country",data.get("country"));
+                locationData.put("name",  data.get("name"));
                 locationData.put("lon", data.get("lon"));
-                locationData.put("lat", data.get("lat"));
+                locationData.put("lat",data.get("lat"));
 
             }
         } catch (Exception error) {
@@ -38,8 +41,8 @@ public class ApiCall {
         }
     }
 
-    public void call() {
-        geocode("Nairobi");
+    private void call(String location) {
+        geocode(location);
         try {
             // a URL object is created based on the API endpoint
             URL url = new URL(String.format("https://api.open-meteo.com/v1/forecast?latitude=%s&longitude=%s&hourly=temperature_2m,relativehumidity_2m,weathercode,surface_pressure,cloudcover,visibility"
@@ -68,4 +71,10 @@ public class ApiCall {
         }
 
     }
+
+    public Map getLocationData(){
+        return locationData;
+    }
+
+
 }
