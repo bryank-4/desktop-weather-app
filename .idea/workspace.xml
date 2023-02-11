@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eba15fdd-819c-43b0-b499-aea566688b89" name="Changes" comment="added a constructor in ApiCall to call its methods">
+    <list default="true" id="eba15fdd-819c-43b0-b499-aea566688b89" name="Changes" comment="switched locationData from Map to Hashmap">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ApiCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApiCall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675869252774</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="switched locationData from Map to Hashmap">
+      <created>1676123325397</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676123325397</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,6 +130,7 @@
     <MESSAGE value="the call() method has been refactored to convert the data directly into a JSON object rather than building the JSON object via Scanner" />
     <MESSAGE value="added geocode method to retrieve longitude and latitude values for a given location" />
     <MESSAGE value="added a constructor in ApiCall to call its methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a constructor in ApiCall to call its methods" />
+    <MESSAGE value="switched locationData from Map to Hashmap" />
+    <option name="LAST_COMMIT_MESSAGE" value="switched locationData from Map to Hashmap" />
   </component>
 </project>
