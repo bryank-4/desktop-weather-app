@@ -1,5 +1,7 @@
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import com.google.gson.internal.LinkedTreeMap;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,6 +10,9 @@ public class Main {
         String location = scanner.nextLine();
         ApiCall caller = new ApiCall(location);
         Map locationData = caller.getLocationData();
-        System.out.println(locationData);
+        LinkedTreeMap <String, Object> currentWeather = caller.getCurrentWeather();
+        HashMap<String, Object> weatherData = caller.getWeatherData();
+        System.out.println(currentWeather);
+        System.out.println(weatherData);
     }
 }

@@ -3,12 +3,19 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.google.gson.internal.LinkedTreeMap;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import com.google.gson.*;
+import java.lang.reflect.Type;
+import com.google.gson.reflect.TypeToken;
 
 public class ApiCall {
     private HashMap<String, String> locationData = new HashMap<>();
+    private HashMap<String, Object> weatherData;
+    private LinkedTreeMap<String, Object> currentWeather;
     private String location;
 
     public ApiCall(String location) {
@@ -29,7 +36,7 @@ public class ApiCall {
                 JSONParser parse = new JSONParser();
                 JSONArray dataArray = (JSONArray) parse.parse(new InputStreamReader(conn.getInputStream()));
                 JSONObject data = (JSONObject) dataArray.get(0);
-                System.out.println(data);
+                //System.out.println(data);
                 locationData.put("country", (String) data.get("country"));
                 locationData.put("name", (String) data.get("name"));
                 locationData.put("lon", String.valueOf(data.get("lon")));
@@ -43,6 +50,8 @@ public class ApiCall {
 
     private void call(String location) {
         geocode(location);
+        Gson gson = new Gson();
+        Type type = new TypeToken<HashMap<String, Object>>(){}.getType();
         try {
             // a URL object is created based on the API endpoint
             URL url = new URL(String.format("https://api.open-meteo.com/v1/forecast?latitude=%s&longitude=%s&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset,uv_index_max,uv_index_clear_sky_max,precipitation_sum,rain_sum,precipitation_hours,windspeed_10m_max,winddirection_10m_dominant&current_weather=true&timezone=auto"
@@ -62,7 +71,11 @@ public class ApiCall {
                 // Using the JSON simple library parse the string into a json object
                 JSONParser parse = new JSONParser();
                 JSONObject data_obj = (JSONObject) parse.parse(new InputStreamReader(conn.getInputStream()));
-                System.out.println(data_obj);
+                //System.out.println(data_obj);
+                weatherData = gson.fromJson(data_obj.toString(),type);
+                //System.out.println(weatherData);
+                currentWeather = (LinkedTreeMap<String, Object>) weatherData.get("current_weather");
+
             }
 
 
@@ -72,8 +85,17 @@ public class ApiCall {
 
     }
 
+
     public Map getLocationData() {
         return locationData;
+    }
+
+    public LinkedTreeMap<String, Object> getCurrentWeather() {
+        return currentWeather;
+    }
+
+    public HashMap<String, Object> getWeatherData() {
+        return weatherData;
     }
 
 

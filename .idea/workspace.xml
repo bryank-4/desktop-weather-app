@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eba15fdd-819c-43b0-b499-aea566688b89" name="Changes" comment="switched locationData from Map to Hashmap">
+    <list default="true" id="eba15fdd-819c-43b0-b499-aea566688b89" name="Changes" comment="updated API call URL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop-weather-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-weather-app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ApiCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApiCall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,9 +52,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Joshua Obare/Documents/Java/desktop-weather-app",
+    "last_opened_file_path": "C:/Users/Joshua Obare/Downloads/jackson-core-2.14.2.jar",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -110,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676123325397</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="updated API call URL">
+      <created>1676124514835</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676124514835</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,6 +144,7 @@
     <MESSAGE value="added geocode method to retrieve longitude and latitude values for a given location" />
     <MESSAGE value="added a constructor in ApiCall to call its methods" />
     <MESSAGE value="switched locationData from Map to Hashmap" />
-    <option name="LAST_COMMIT_MESSAGE" value="switched locationData from Map to Hashmap" />
+    <MESSAGE value="updated API call URL" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated API call URL" />
   </component>
 </project>
