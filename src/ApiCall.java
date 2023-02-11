@@ -8,7 +8,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class ApiCall {
-    private Map locationData = new HashMap();
+    private HashMap<String, String> locationData = new HashMap<>();
     private String location;
 
     public ApiCall(String location) {
@@ -29,11 +29,11 @@ public class ApiCall {
                 JSONParser parse = new JSONParser();
                 JSONArray dataArray = (JSONArray) parse.parse(new InputStreamReader(conn.getInputStream()));
                 JSONObject data = (JSONObject) dataArray.get(0);
-
-                locationData.put("country",data.get("country"));
-                locationData.put("name",  data.get("name"));
-                locationData.put("lon", data.get("lon"));
-                locationData.put("lat",data.get("lat"));
+                System.out.println(data);
+                locationData.put("country", (String) data.get("country"));
+                locationData.put("name", (String) data.get("name"));
+                locationData.put("lon", String.valueOf(data.get("lon")));
+                locationData.put("lat", String.valueOf(data.get("lat")));
 
             }
         } catch (Exception error) {
@@ -45,7 +45,7 @@ public class ApiCall {
         geocode(location);
         try {
             // a URL object is created based on the API endpoint
-            URL url = new URL(String.format("https://api.open-meteo.com/v1/forecast?latitude=%s&longitude=%s&hourly=temperature_2m,relativehumidity_2m,weathercode,surface_pressure,cloudcover,visibility"
+            URL url = new URL(String.format("https://api.open-meteo.com/v1/forecast?latitude=%s&longitude=%s&hourly=temperature_2m,weathercode&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max,precipitation_sum,rain_sum,windspeed_10m_max&timezone=auto"
                     , locationData.get("lat"), locationData.get("lon")));
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
@@ -72,7 +72,7 @@ public class ApiCall {
 
     }
 
-    public Map getLocationData(){
+    public Map getLocationData() {
         return locationData;
     }
 
