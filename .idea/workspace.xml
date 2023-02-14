@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eba15fdd-819c-43b0-b499-aea566688b89" name="Changes" comment="added MySQL dependencies and database connection class">
+    <list default="true" id="eba15fdd-819c-43b0-b499-aea566688b89" name="Changes" comment="added connect and select methods to DBConnection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desktop-weather-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-weather-app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -59,7 +58,6 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "C:/Users/Joshua Obare/Downloads/jackson-core-2.14.2.jar",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -139,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676379232693</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added connect and select methods to DBConnection">
+      <created>1676381063882</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1676381063882</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,6 +168,7 @@
     <MESSAGE value="updated API call URL" />
     <MESSAGE value="added GSON library to convert JSON objects to Map objects" />
     <MESSAGE value="added MySQL dependencies and database connection class" />
-    <option name="LAST_COMMIT_MESSAGE" value="added MySQL dependencies and database connection class" />
+    <MESSAGE value="added connect and select methods to DBConnection" />
+    <option name="LAST_COMMIT_MESSAGE" value="added connect and select methods to DBConnection" />
   </component>
 </project>
