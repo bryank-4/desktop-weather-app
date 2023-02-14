@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eba15fdd-819c-43b0-b499-aea566688b89" name="Changes" comment="added GSON library to convert JSON objects to Map objects">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_code_gson.xml" afterDir="false" />
+    <list default="true" id="eba15fdd-819c-43b0-b499-aea566688b89" name="Changes" comment="added MySQL dependencies and database connection class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ApiCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApiCall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop-weather-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-weather-app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +53,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
+    "Downloaded.Files.Path.Enabled": "true",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -132,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676130484055</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added MySQL dependencies and database connection class">
+      <created>1676379232693</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676379232693</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,6 +162,7 @@
     <MESSAGE value="switched locationData from Map to Hashmap" />
     <MESSAGE value="updated API call URL" />
     <MESSAGE value="added GSON library to convert JSON objects to Map objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="added GSON library to convert JSON objects to Map objects" />
+    <MESSAGE value="added MySQL dependencies and database connection class" />
+    <option name="LAST_COMMIT_MESSAGE" value="added MySQL dependencies and database connection class" />
   </component>
 </project>
