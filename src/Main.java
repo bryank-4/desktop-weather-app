@@ -9,7 +9,7 @@ public class Main {
         System.out.println("What location?");
         String location = scanner.nextLine();
         ApiCall caller = new ApiCall(location);
-        Map locationData = caller.getLocationData();
+        Map<String, String> locationData = caller.getLocationData();
         LinkedTreeMap <String, Object> currentWeather = caller.getCurrentWeather();
         HashMap<String, Object> weatherData = caller.getWeatherData();
         System.out.println(currentWeather);
