@@ -27,5 +27,6 @@
     </orderEntry>
     <orderEntry type="library" name="google.code.gson" level="project" />
     <orderEntry type="library" name="mysql.connector.j" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

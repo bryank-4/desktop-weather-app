@@ -8,14 +8,19 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("What location?");
         String location = scanner.nextLine();
+
         ApiCall caller = new ApiCall(location);
+
         Map<String, String> locationData = caller.getLocationData();
         LinkedTreeMap <String, Object> currentWeather = caller.getCurrentWeather();
         HashMap<String, Object> weatherData = caller.getWeatherData();
+
+
         System.out.println(location);
         System.out.println(currentWeather);
         System.out.println(weatherData);
-        DBConnection db = new DBConnection();
-        db.update(currentWeather , locationData);
+
+        /*DBConnection db = new DBConnection();
+        db.update(currentWeather , locationData);*/
     }
 }

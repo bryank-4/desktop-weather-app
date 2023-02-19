@@ -1,6 +1,5 @@
 import com.google.gson.internal.LinkedTreeMap;
 import org.json.simple.JSONObject;
-
 import java.sql.*;
 import java.util.Map;
 
@@ -8,6 +7,7 @@ public class DBConnection {
     private Connection conn = null;
     private Statement statement = null;
     private ResultSet rs = null;
+    private PreparedStatement prstatement = null;
 
     public DBConnection() {
         connect();
@@ -42,7 +42,7 @@ public class DBConnection {
     public void update(LinkedTreeMap obj, Map locationData) {
 
         try {
-            PreparedStatement prstatement = conn.prepareStatement("INSERT INTO  CURRENT_WEATHER (userID , location , " +
+            prstatement = conn.prepareStatement("INSERT INTO  CURRENT_WEATHER (userID , location , " +
                     "weathercode , temperature , windspeed , time , winddirection) VALUES ( 1 ,? ,? ,? ,? , ? , ?)");
             prstatement.setObject(1, locationData.get("name"));
             prstatement.setObject(2, obj.get("weathercode"));
