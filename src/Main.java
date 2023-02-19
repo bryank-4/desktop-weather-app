@@ -22,5 +22,6 @@ public class Main {
 
         /*DBConnection db = new DBConnection();
         db.update(currentWeather , locationData);*/
+
     }
 }
